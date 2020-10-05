@@ -1,0 +1,37 @@
+<?php
+
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreateWaliKelasTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('wali_kelas', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->integer('guru_id');
+            $table->integer('kelas_id');
+            $table->timestamps();
+        });
+
+        // $table->foreign('kelas_id')->references('id')->on('kelas');
+        // $table->foreign('guru_id')->references('id')->on('guru');
+
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('wali_kelas');
+    }
+}
