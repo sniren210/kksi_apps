@@ -13,8 +13,13 @@ class ruang extends Model
 
     protected $fillable = ['nmr_ruang', 'jenis_ruang'];
 
-    public function mapel()
+    // public function mapel()
+    // {
+    //     return $this->belongsToMany('App\mapel', 'jadwal_guru');
+    // }
+
+    public function jadwal_ruang()
     {
-        return $this->belongsToMany('App\mapel', 'jadwal_guru');
+        return $this->hasMany('App\Models\jadwal_ruang', 'ruang_id');
     }
 }

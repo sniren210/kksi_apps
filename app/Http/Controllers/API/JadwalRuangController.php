@@ -31,18 +31,6 @@ class JadwalRuangController extends BaseController
         //
         $data = $request->all();
 
-        $msg = [
-            'required' => ':attribute  Harus di isi'
-        ];
-
-        $validator = Validator::make($data, [
-            'name' => 'required',
-            'detail' => 'required',
-        ],$msg);
-
-        if ($validator->fails()) {
-            return $this->sendError('Validasi Gagal.', $validator->errors());
-        }
 
         $create = jadwal_ruang::create($data);
 
@@ -79,18 +67,6 @@ class JadwalRuangController extends BaseController
         //
         $data = $request->all();
 
-        $msg = [
-            'required' => ':attribute  Harus di isi'
-        ];
-
-        $validator = Validator::make($data, [
-            'name' => 'required',
-            'detail' => 'required',
-        ],$msg);
-
-        if ($validator->fails()) {
-            return $this->sendError('Validasi Gagal.', $validator->errors());
-        }
 
         $product->name = $data['name'];
 

@@ -14,5 +14,6 @@ class GuruSeeder extends Seeder
     public function run()
     {
         //
+        \App\Models\Guru::factory(5)->create();
     }
 }

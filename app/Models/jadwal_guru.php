@@ -16,4 +16,13 @@ class jadwal_guru extends Model
         'mapel_id',
         'jam_ke',
     ];
+
+    public function guru()
+    {
+        return $this->belongsTo('App\Models\guru', 'guru_id');
+    }
+    public function mapel()
+    {
+        return $this->belongsTo('App\Models\mapel', 'mapel_id');
+    }
 }

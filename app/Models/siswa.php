@@ -30,16 +30,26 @@ class siswa extends Model
 
     public function kelas()
     {
-        return $this->belongsTo('App\kelas');
+        return $this->belongsTo('App\Models\kelas');
     }
 
     public function jurusan()
     {
-        return $this->belongsTo('App\jurusan');
+        return $this->belongsTo('App\Models\jurusan');
     }
 
-    public function mapel()
+    // public function mapel()
+    // {
+    //     return $this->belongsToMany('App\Models\mapel', 'nilai_siswa');
+    // }
+
+    public function nilai_siswa()
     {
-        return $this->belongsToMany('App\mapel', 'nilai_siswa');
+        return $this->hasMany('App\Models\nilai_siswa', 'siswa_id');
+    }
+    
+    public function saran()
+    {
+        return $this->hasMany('App\Models\saran', 'siswa_id');
     }
 }

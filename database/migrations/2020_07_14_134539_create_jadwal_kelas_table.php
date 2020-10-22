@@ -14,10 +14,12 @@ class CreateJadwalKelasTable extends Migration
     public function up()
     {
         Schema::create('jadwal_kelas', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->id();
             $table->integer('kelas_id');
             $table->integer('mapel_id');
             $table->integer('jam_ke');
+            // $table->foreign('kelas_id')->references('id')->on('kelas')->onDelete('cascade');
+            // $table->foreign('mapel_id')->references('id')->on('mapel')->onDelete('cascade');
             $table->timestamps();
         });
 

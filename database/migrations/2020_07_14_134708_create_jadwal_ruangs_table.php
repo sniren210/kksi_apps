@@ -14,10 +14,12 @@ class CreateJadwalRuangsTable extends Migration
     public function up()
     {
         Schema::create('jadwal_ruang', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->id();
             $table->integer('ruang_id');
             $table->integer('mapel_id');
             $table->integer('jam_ke');
+            // $table->foreign('ruang_id')->references('id')->on('ruang')->onDelete('cascade');
+            // $table->foreign('mapel_id')->references('id')->on('mapel')->onDelete('cascade');
             $table->timestamps();
         });
 

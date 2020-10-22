@@ -11,24 +11,41 @@ class mapel extends Model
 
     protected $table = 'mapel';
 
-    protected $fillable = ['nama', 'jenis_mapel', 'kkm'];
+    protected $fillable = ['nama', 'singkatan','jenis_mapel', 'kkm'];
 
-    public function siswa()
-    {
-        return $this->belongsToMany('App\siswa', 'nilai_siswa');
-    }
+    // public function siswa()
+    // {
+    //     return $this->belongsToMany('App\Models\siswa', 'nilai_siswa');
+    // }
 
-    public function guru()
-    {
-        return $this->belongsToMany('App\guru', 'jadwal_guru');
-    }
-    public function kelas()
-    {
-        return $this->belongsToMany('App\kelas', 'jadwal_kelas');
+    // public function guru()
+    // {
+    //     return $this->belongsToMany('App\Models\guru', 'jadwal_guru');
+    // }
+    // public function kelas()
+    // {
+    //     return $this->belongsToMany('App\Models\kelas', 'jadwal_kelas');
 
-    }
-    public function ruang()
+    // }
+    // public function ruang()
+    // {
+    //     return $this->belongsToMany('App\Models\ruang', 'jadwal_ruang');
+    // }
+
+    public function jadwal_guru()
     {
-        return $this->belongsToMany('App\ruang', 'jadwal_ruang');
+        return $this->hasMany('App\Models\jadwal_guru', 'mapel_id');
+    }
+    public function jadwal_ruang()
+    {
+        return $this->hasMany('App\Models\jadwal_ruang', 'mapel_id');
+    }
+    public function jadwal_kelas()
+    {
+        return $this->hasMany('App\Models\jadwal_kelas', 'mapel_id');
+    }
+    public function nilai_siswa()
+    {
+        return $this->hasMany('App\Models\nilai_siswa', 'mapel_id');
     }
 }

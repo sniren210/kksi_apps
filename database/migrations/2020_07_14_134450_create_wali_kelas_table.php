@@ -14,9 +14,11 @@ class CreateWaliKelasTable extends Migration
     public function up()
     {
         Schema::create('wali_kelas', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->id();
             $table->integer('guru_id');
             $table->integer('kelas_id');
+            // $table->foreign('guru_id')->references('id')->on('guru')->onDelete('cascade');
+            // $table->foreign('kelas_id')->references('id')->on('kelas')->onDelete('cascade');
             $table->timestamps();
         });
 

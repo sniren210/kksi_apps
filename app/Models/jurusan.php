@@ -15,6 +15,6 @@ class jurusan extends Model
 
     public function siswa()
     {
-        return $this->hasMany('App\siswa', 'jurusan_id');
+        return $this->hasMany('App\Models\siswa', 'jurusan_id');
     }
 }

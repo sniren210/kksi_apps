@@ -16,4 +16,13 @@ class jadwal_kelas extends Model
         'mapel_id',
         'jam_ke',
     ];
+
+    public function kelas()
+    {
+        return $this->belongsTo('App\Models\kelas', 'kelas_id');
+    }
+    public function mapel()
+    {
+        return $this->belongsTo('App\Models\mapel', 'mapel_id');
+    }
 }

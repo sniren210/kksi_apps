@@ -14,10 +14,12 @@ class CreateNilaiSiswasTable extends Migration
     public function up()
     {
         Schema::create('nilai_siswa', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->id();
             $table->integer('nilai');
             $table->integer('siswa_id');
             $table->integer('mapel_id');
+            // $table->foreign('siswa_id')->references('id')->on('siswa');
+            // $table->foreign('mapel_id')->references('id')->on('mapel');
             $table->timestamps();
         });
 

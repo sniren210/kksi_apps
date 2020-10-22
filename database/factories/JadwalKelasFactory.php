@@ -23,6 +23,9 @@ class jadwal_kelasFactory extends Factory
     {
         return [
             //
+            'guru_id' => 1,
+            'mapel_id' => 1,
+            'jam_ke' => 1,
         ];
     }
 }

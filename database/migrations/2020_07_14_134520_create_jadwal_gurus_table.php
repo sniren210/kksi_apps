@@ -14,10 +14,12 @@ class CreateJadwalGurusTable extends Migration
     public function up()
     {
         Schema::create('jadwal_guru', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->id();
             $table->integer('guru_id');
             $table->integer('mapel_id');
             $table->integer('jam_ke');
+            // $table->foreign('guru_id')->references('id')->on('guru')->onDelete('cascade');
+            // $table->foreign('mapel_id')->references('id')->on('mapel')->onDelete('cascade');
             $table->timestamps();
         });
 

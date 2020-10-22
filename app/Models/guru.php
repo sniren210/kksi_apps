@@ -25,16 +25,21 @@ class guru extends Model
 
     public function sekolah()
     {
-        return $this->hasOne('App\sekolah');
+        return $this->hasOne('App\Models\sekolah');
     }
 
     public function kelas()
     {
-        return $this->belongsToMany('App\kelas', 'wali_kelas');
+        return $this->belongsToMany('App\Models\kelas', 'wali_kelas');
     }
     
-    public function mapel()
+    // public function mapel()
+    // {
+    //     return $this->belongsToMany('App\Models\mapel', 'jadwal_guru');
+    // }
+
+    public function jadwal_guru()
     {
-        return $this->belongsToMany('App\mapel', 'jadwal_guru');
+        return $this->hasMany('App\Models\jadwal_guru', 'guru_id');
     }
 }

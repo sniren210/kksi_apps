@@ -16,4 +16,18 @@ class jadwal_ruang extends Model
         'mapel_id',
         'jam_ke',
     ];
+
+    public function ruang()
+    {
+        return $this->belongsTo('App\Models\ruang', 'ruang_id');
+    }
+    // public function mapel()
+    // {
+    //     return $this->belongsTo('App\Models\mapel', 'mapel_id');
+    // }
+
+    public function mapel()
+    {
+        return $this->belongsTo('App\Models\mapel', 'mapel_id');
+    }
 }

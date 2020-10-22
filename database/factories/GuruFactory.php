@@ -23,6 +23,15 @@ class guruFactory extends Factory
     {
         return [
             //
+            'nama' => $this->faker->name(),
+            'nip' => $this->faker->randomNumber($nbDigits = 8),
+            'npwp' => $this->faker->randomNumber($nbDigits = 8),
+            'tmp_lahir' => $this->faker->state,
+            'tgl_lahir' => $this->faker->date($format = 'Y-m-d', $max = 'now'),
+            'jk' => 'Laki-laki',
+            'agama' => 'Islam',
+            'alamat' => $this->faker->address,
+            'foto' => 'guru-default.png',
         ];
     }
 }

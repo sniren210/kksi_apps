@@ -23,6 +23,8 @@ class jurusanFactory extends Factory
     {
         return [
             //
+            'nama' => 'Rekayasa Perangkat Lunak',
+            'singkatan' => 'RPL'
         ];
     }
 }
